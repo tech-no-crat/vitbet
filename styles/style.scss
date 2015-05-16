@@ -1,8 +1,11 @@
+@import url(http://fonts.googleapis.com/css?family=Play:400,700|Roboto:400,700,400italic&subset=latin,greek);
+
 body {
   margin: 0;
   padding: 0;
   color: #333;
   background-color: #F7F7F7;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -10,4 +13,94 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+h1 {
+  font-family: 'Play', sans-serif;
+  height: 100px;
+
+  span {
+    margin-left: 20px;
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+
+    position: relative;
+    bottom: 20px;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+hgroup {
+  text-align: center;
+  margin: 50px 0;
+  
+  h1 {
+    font-size: 80px;
+    margin: 0;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+#vitchip, #vitchip .border, #vitchip .border .image {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+}
+
+#vitchip {
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  border: 10px dotted #B34242;
+  display: inline-block;
+}
+
+#vitchip .border {
+  border: 10px solid black;
+  background: none;
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  z-index: -10;
+}
+
+#vitchip .border .image {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+
+  background: url(/vitalis.png) no-repeat;
+  background-size: 100%;
+  background-size: 80px auto;
+}
+
+button#bet {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  background: url(/bitcoin.png) no-repeat;
+  background-size: 40px auto;
+  background-position: 5px 4px;
+  padding-left: 50px;
+  
+  border-radius: 5px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+#axis {
+  height: 2px;
+  background: #333;
+  width: 960px;
+  margin: 30px auto;
 }
