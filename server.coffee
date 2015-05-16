@@ -6,6 +6,7 @@ express = require 'express'
 bodyParser = require 'body-parser'
 sassMiddleware = require 'node-sass-middleware'
 session = require 'express-session'
+coffeeMiddleware = require 'coffee-middleware'
 app = express()
 
 # Own code requires
@@ -21,6 +22,12 @@ app.use sassMiddleware
   dest: __dirname + '/public'
   debug: false
   outputStyle: 'compressed'
+
+# ...and coffeescript for client-side javascript
+app.use coffeeMiddleware
+  src: __dirname + "/client"
+  dest: __dirname + "/public"
+  compress: true
 
 # Setup session middleware
 app.use session
