@@ -1,0 +1,13 @@
+{
+  "name": "ExpressPlaceholderApp",
+  "description": "",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "body-parser": "*",
+    "node-sass-middleware": "*",
+    "express-session": "*",
+    "jade": "*",
+    "express": "~4.9.0"
+  }
+}

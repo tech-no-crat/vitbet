@@ -1,0 +1,2 @@
+# Helper methods
+module.exports = {}
