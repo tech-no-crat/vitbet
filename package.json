@@ -9,6 +9,8 @@
     "express-session": "*",
     "coffee-middleware": "*",
     "jade": "*",
+    "request": "*",
+    "bitcore": "*",
     "express": "~4.9.0"
   }
 }

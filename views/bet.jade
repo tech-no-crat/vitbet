@@ -1,0 +1,24 @@
+include ./head
+
+#bet
+  #img-container
+    img#address(src="https://blockchain.info/qr?data=" + address + "&size=200")
+    .address= address
+  #info
+    #main
+      #at
+        .pre Ο Βιτάλης θα γράψει
+        .value= at
+        .after μόρια στις Πανελλήνιες 2015.
+      #amount
+        .pre Στοίχημα για το ποσό των
+        .value= Math.floor(balance / 100000)
+        .after mBTC
+    
+    #details
+      Δημοσίευσε μία και <em>μόνο μία συναλλαγή</em> σε αυτή τη διεύθυνση με το ποσό που θέλεις να στοιχηματήσεις. Το στοίχημα αυτό θα πληρωθεί στη διεύθυνση της πρώτης συναλλαγής το αργότερο στις <em>31 Αυγούστου 2015</em> σύμφωνα με τους <a href='/rules'>κανόνες του Vitbet</a>.
+
+p.center Τα ποσά στα στοιχήματα ανανεώνονται κάθε μερικά λεπτά.
+  
+
+include ./footer

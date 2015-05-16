@@ -1,15 +1,18 @@
 include ./head
 
-hgroup
-  h1
-    #vitchip
-      .border
-        .image
-    span Vitbet
-  h2 Στοιχημάτησε στο πόσο θα γράψει ο Βιτάλης στις Πανελλήνιες
+.hidden.templates
+  .step-label
 
 #axis
+  #slider.not-used
+    span#value 
+    span#instruction Drag Me!
 
-button#bet Στοιχημάτησε με Bitcoin
+form(method='POST', action='/bets')
+  button#bet
+    img.icon(src='/bitcoin.png')
+    .text Στοιχημάτησε με Bitcoin
+      #bet-info στα <input type='hidden' value=19000 name='where' id='bet-at'></input><span id='bet-at-label'></span> μόρια
+  p#read-rules Διάβασε τους <a href='rules'>κανόνες</a>
 
 include ./footer

@@ -2,10 +2,20 @@ doctype html
 
 html
   title My Node App
+  link(rel='stylesheet', href='/jquery-ui.min.css')
+  link(rel='stylesheet', href='/jquery-ui.structure.min.css')
   link(rel='stylesheet', href='/style.css')
   script(src='//code.jquery.com/jquery-1.11.2.min.js')
+  script(src='/jquery-ui.min.js')
   script(src='client.js')
 
 body
   header
+    hgroup
+      h1
+        a#vitchip(href='/')
+          .border
+            .image
+        span Vitbet
+      h2 Στοιχημάτησε στο πόσο θα γράψει ο Βιτάλης στις Πανελλήνιες
 
