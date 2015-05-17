@@ -7,6 +7,15 @@ include ./head
   #slider.not-used
     span#value 
     span#instruction Drag Me!
+  .avg.weighted.stat
+    span.value= Math.floor(stats.weightedAverage)
+    span.label Ζυγισμένος Μ.Ο. 
+  .avg.stat
+    span.value= Math.floor(stats.average)
+    span.label Μ.Ο. 
+  each b in bets
+    .bet
+      .value= b.at
 
 form(method='POST', action='/bets')
   button#bet
@@ -14,5 +23,8 @@ form(method='POST', action='/bets')
     .text Στοιχημάτισε με Bitcoin
       #bet-info στα <input type='hidden' value=19000 name='where' id='bet-at'></input><span id='bet-at-label'></span> μόρια
   p#read-rules Διάβασε τους <a href='rules'>κανόνες</a>
+
+#statistics
+  p Συνολικά έχουν παιχτεί <em>#{stats.bets} στοιχήματα</em> για <em>#{Math.floor(stats.totalBalance/100000)} mBTC</em>. Τα στοιχήματα κλείνουν την <em>Κυριακή 24/05</em>.
 
 include ./footer

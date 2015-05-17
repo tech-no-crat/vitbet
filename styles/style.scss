@@ -294,3 +294,44 @@ div#bet {
   font-size: 12px;
   text-align: center;
 }
+
+.stat {
+  .label, .value {
+    display: block;
+  }
+
+
+  bottom: 0px;
+  border-left: 3px dotted #006F9E;
+  color: #006F9E;
+  padding-left: 10px;
+  padding-bottom: 40px;
+  width: 100px;
+
+  &.weighted {
+    border-left: 3px dotted #9E002F;
+    color: #9E002F;
+    padding-bottom: 3px;
+  }
+}
+
+#axis div.bet {
+  width: 2px;
+  height: 7px;
+  background: red;
+  
+  .value {
+    display: none;
+  }
+}
+
+#statistics {
+  margin-top: 80px;
+  text-align: center;
+
+  em {
+    color: #E36A00;
+    font-style: normal;
+    font-weight: bold;
+  }
+}

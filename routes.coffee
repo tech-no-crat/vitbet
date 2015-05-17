@@ -1,5 +1,6 @@
 BetCollection= require './betCollection'
 Bet = require './bet'
+_ = require 'underscore'
 config = require './config'
 
 # A function that takes an express app object and adds routes to it
@@ -7,7 +8,13 @@ module.exports = (app) ->
   bets = new BetCollection(config.betsFilename)
 
   app.get '/', (req, res) ->
-    res.render 'landing'
+    res.render 'landing',
+      stats:
+        average: bets.getAverage()
+        weightedAverage: bets.getWeightedAverage()
+        totalBalance: bets.getTotalBalance()
+        bets: bets.getActiveBetsCount()
+      bets: bets.getActiveBets().map (b) -> _.pick(b, 'balance', 'at')
 
   app.get '/rules', (req, res) ->
     res.render 'rules'

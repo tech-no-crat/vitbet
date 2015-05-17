@@ -2,13 +2,14 @@ class Axis
   constructor: (@selector, @size, @low, @high, @defaultValue) ->
     @addStepLabels()
     @initializeSlider()
+    @initializeStat(".avg")
+    @initializeStat(".avg.weighted", 1)
+    @initializeBets()
 
   addStepLabels: (step) ->
     step ||= (@high - @low) / 10
-    console.log "Adding step labels from #{@low} to #{@high} with step #{step}"
 
     for cur in [@low..@high] by step
-      console.log cur
       label = $(".templates > .step-label").clone()
       label.html(cur)
       label.css("left", @valueToPosition(cur))
@@ -27,7 +28,20 @@ class Axis
 
       @setValue(@defaultValue, true)
 
+  initializeStat: (selector, extraPixels = 0) ->
+    val = parseInt($(selector + " .value").html())
+    val = @valueToPosition(val)
+    $(selector).css("left", (parseInt(val) + parseInt(extraPixels)) + "px")
+
+  initializeBets: ->
+    self = this
+    $("#axis .bet").each ->
+      val = parseInt($(this).children(".value").html())
+      console.log val
+      $(this).css("left", self.valueToPosition(val) + "px")
+
   valueToPosition: (value) -> @size * (value-@low)/(@high-@low)
+
   setValue: (value, move = false) ->
         self.value = value
         $("#slider #value").html(Math.floor(value))
